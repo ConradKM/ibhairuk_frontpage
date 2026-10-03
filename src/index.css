@@ -1,0 +1,83 @@
+@import 'tailwindcss';
+
+/*
+ * Black and white only. The logo carries the brand's one colour, so the page itself stays
+ * monochrome: black surfaces, white type, greys for secondary text and hairline borders.
+ */
+@theme {
+  --font-sans: 'Josefin Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-serif: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-script: 'Pinyon Script', cursive;
+
+  --color-ink: #000000;
+  --color-coal: #0b0b0b;
+  --color-graphite: #161616;
+  --color-muted: #a3a3a3;
+  --color-faint: #6b6b6b;
+
+  --animate-marquee: marquee 70s linear infinite;
+  --animate-fade-in: fade-in 0.3s ease-out both;
+  --animate-scroll-cue: scroll-cue 2.2s ease-in-out infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes scroll-cue {
+    0% {
+      transform: scaleY(0);
+      transform-origin: top;
+    }
+    45% {
+      transform: scaleY(1);
+      transform-origin: top;
+    }
+    55% {
+      transform: scaleY(1);
+      transform-origin: bottom;
+    }
+    100% {
+      transform: scaleY(0);
+      transform-origin: bottom;
+    }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ink font-sans text-white antialiased;
+}
+
+::selection {
+  @apply bg-white text-ink;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

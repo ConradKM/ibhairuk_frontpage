@@ -11,7 +11,7 @@ import { IYONI_IMAGE } from '../content/home'
 import { SERVICE_CATEGORIES } from '../content/services'
 import { body, btnGhost, btnPrimary, eyebrow, script, serifCaps } from '../lib/styles'
 
-const galleryPreview = GALLERY.slice(0, 6)
+const galleryPreview = GALLERY.slice(0, 4)
 
 export default function Landing() {
   return (
@@ -160,9 +160,9 @@ export default function Landing() {
             </Link>
           </div>
 
-          <div className="mt-12 grid grid-cols-2 gap-1 sm:grid-cols-3">
+          <div className="mt-12 grid grid-cols-2 gap-1 md:grid-cols-4">
             {galleryPreview.map((photo, i) => (
-              <Reveal key={photo.file} delay={(i % 3) * 100}>
+              <Reveal key={photo.file} delay={(i % 4) * 100}>
                 <Link to="/gallery" className="group relative block overflow-hidden">
                   <img
                     src={galleryUrl(photo)}

@@ -54,10 +54,10 @@ Everything lives in `src/content/` — no need to touch the pages.
 
 ## Notes for whoever edits this next
 
-- **The Home page scrolling photos are real; everything else is a placeholder** (grey `.svg`
-  files). Swap in real `.jpg`/`.webp` photos and update the file names in `src/content/`. The
-  originals for the scrolling photos are in `images/sliding_window/`. Keep them around 1600px on the long edge so the site
-  stays fast on mobile data.
+- **All photos are real.** Originals live in `images/` (`sliding_window/`, `gallery/`,
+  `frontpage/`); the site uses resized copies in `public/`. Phone screenshots and Instagram
+  stories need their coloured bars cropped off before going in `public/`. Keep them around
+  1600px on the long edge so the site stays fast on mobile data.
 - **Booking buttons don't link anywhere yet.** Set `BOOKING_URL` in
   [`src/lib/constants.ts`](src/lib/constants.ts) and every "Book Iyoni" / "Book appointment"
   button picks it up.

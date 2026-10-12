@@ -13,4 +13,4 @@ export const HERO_IMAGES = [
 ].map((file) => `/hero/${file}`)
 
 // The photo beside "Meet Iyoni" (in public/images/).
-export const IYONI_IMAGE = { src: '/images/iyoni.svg', alt: 'Iyoni, loctician at IBHairUK' }
+export const IYONI_IMAGE = { src: '/images/iyoni.jpg', alt: 'Iyoni, loctician at IBHairUK' }
